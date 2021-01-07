@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <table id="tableID" class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>MODEL</th>
+            <th>OWNER</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="even pointer" th:each="row: ${carList}" id="tablerow">
+            <td th:text="${row.id}" />
+            <td th:text="${row.model}" />
+            <td th:text="${row.owner}" />
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
