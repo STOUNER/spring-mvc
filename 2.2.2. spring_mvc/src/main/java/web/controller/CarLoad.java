@@ -15,15 +15,14 @@ import web.service.CarServiceImp;
 public class CarLoad {
 
     @Autowired
-    private ApplicationContext appContext;
+    CarService carService;
 
     @GetMapping("carload")
     public String LoadSomeCar(ModelMap model) {
-        CarService addNewCar = appContext.getBean(CarService.class);
-        addNewCar.addCar(new Car("BMW", 1461,"USER1"));
-        addNewCar.addCar(new Car("BMW", 1462,"USER1"));
-        addNewCar.addCar(new Car("BMW", 1463,"USER1"));
-        addNewCar.addCar(new Car("BMW", 1464,"USER1"));
+        carService.addCar(new Car("BMW", 1461,"USER1"));
+        carService.addCar(new Car("BMW", 1462,"USER1"));
+        carService.addCar(new Car("BMW", 1463,"USER1"));
+        carService.addCar(new Car("BMW", 1464,"USER1"));
         model.addAttribute("hello");
         return "index";
     }
