@@ -18,10 +18,12 @@ import java.util.List;
 public class CarGet {
     @Autowired
     private ApplicationContext appContext;
+    @Autowired
+    private CarService carService;
 
     @GetMapping("car")
     public String getCar(Model model, HttpServletRequest request) {
-        CarService carService = appContext.getBean(CarService.class);
+//        CarService carService = appContext.getBean(CarService.class);
         List<Car> carList = carService.getAllCar();
         String count = request.getParameter("count");
         if (count != null && Integer.parseInt(count) < 5) {

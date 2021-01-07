@@ -20,8 +20,6 @@ import java.util.Properties;
 @ComponentScan(value = "web")
 public class HibernateConfig {
 
-//    @Autowired
-//    private Environment env;
 
     @Bean
     public DataSource getDataSource() {
@@ -54,9 +52,4 @@ public class HibernateConfig {
         return transactionManager;
     }
 
-    @Bean
-    public Car car() {
-        Car car = new Car();
-        return car;
-    }
 }
